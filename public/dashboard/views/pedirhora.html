@@ -1,4 +1,4 @@
-<section>
+<section ng-controller="Hora">
 <hr>
 <div class="col-md-5">
                 <div class="input-group">
@@ -19,14 +19,14 @@
 			<th>Accion</th>
 		</tr>
 	</thead>
-	<tbody ng-controller="Hora">
+	<tbody>
 		<tr ng-repeat="paciente in pacientes | filter:buscarpaciente">
 			<td>{{paciente.rut}}</td>
 			<td>{{paciente.telefono}}</td>
 			<td>
-				<button class="btn btn-success">Seleccionar</button>
+				<button class="btn btn-success" ng-click="seleccionado(paciente)">Seleccionar</button>
 				<!--<button style="background-color:#007da7;color:white;" class="btn btn-default">Actualizar telefono</button>-->
-				<button class="btn btn-primary">Actualizar telefono</button>
+				<button class="btn btn-primary">Editar telefono</button>
 			</td>
 		</tr>
 	</tbody>
@@ -34,4 +34,8 @@
 
 </table>
 <hr>
+
+
+
+
 </section>

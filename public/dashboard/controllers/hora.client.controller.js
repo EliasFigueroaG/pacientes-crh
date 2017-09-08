@@ -1,13 +1,20 @@
-angular.module('dashboard').controller('Hora',['$scope',function ($scope) {
+angular.module('dashboard').controller('Hora',['$scope','$location','pacienteinfo',function ($scope,$location,pacienteinfo) {
 	$scope.pacientes = [
 		{rut:'18988430',
-		 telefono:'d'	
+		 telefono:'555555'	
 			},
 		{rut:'18988710',
-		 telefono:'a'},
+		 telefono:'555555'},
 		{rut:'18229444',
-		 telefono:'b'},
+		 telefono:'5555555'},
 		{rut:'10813411',
-		telefono:'c'}
-	]
+		telefono:'555555'}
+	];		
+
+	$scope.seleccionado = function(paciente){
+		pacienteinfo.datahora.paciente = paciente.rut
+		console.log(pacienteinfo.datahora.paciente);
+		//$location.url('/prueba'); //ruta de tu vista alfonso, la de los doctores
+
+	}	
 }])
